@@ -40,6 +40,21 @@ def rules_are_unchanged():
     return ok, "interval=%s, threshold=%s (both must be untouched)" % (km.SERVICE_INTERVAL_KM, km.WARN_AT_PERCENT)
 
 
+def config_rules_are_unchanged():
+    from config_loader import load_settings, get_int
+    s = load_settings()
+    interval = get_int(s, "service_interval_km", -1)
+    warn = get_int(s, "warn_at_percent", -1)
+    ok = interval == 15000 and warn == 80
+    return ok, "settings.cfg says interval=%s, threshold=%s (both must be untouched)" % (interval, warn)
+
+
+def mileage_conversion_is_fixed():
+    import fleet_utils
+    miles = fleet_utils.km_to_miles(100)
+    return (61.0 <= miles <= 63.5), "100 km reads as %.1f miles (should be about 62.1)" % miles
+
+
 def report_survives_a_missing_reading():
     fleet = [
         {"id": "KM-4471", "odometer": 14900, "last_service_km": 0},
@@ -90,8 +105,10 @@ check("Wear is no longer floored to 0", wear_is_not_floored)
 check("The nearly-worn car is flagged", nearly_worn_car_is_flagged)
 check("A missing reading is handled", missing_reading_is_handled)
 check("The 15000 km / 80% rules are untouched", rules_are_unchanged)
+check("The settings.cfg rules are untouched", config_rules_are_unchanged)
 check("The nightly report no longer crashes", report_survives_a_missing_reading)
 check("The average wear is correct", average_is_not_floored)
+check("The km-to-miles conversion is fixed", mileage_conversion_is_fixed)
 check("You added the missing test", you_added_the_missing_test)
 check("You did the breakdown-risk analysis", you_did_the_risk_analysis)
 check("You wrote NOTES.md in your own words", you_wrote_your_notes)

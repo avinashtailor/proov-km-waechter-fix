@@ -33,7 +33,10 @@ this template.
 - **`verify.py`** — your own acceptance check. It does not grade you — it tells you,
   mechanically, whether the job is actually done, so "finished" is something you checked
   rather than something your AI agent told you. Run `python verify.py` before you hand in.
-- **`km_wachter.py` / `fleet_report.py`** — the two modules with the hidden bugs.
+- **`km_wachter.py` / `fleet_report.py`** — the two core modules with the hidden bugs.
+- **`config_loader.py` / `fleet_utils.py` / `log_util.py`** — 2013-era helper modules: dated
+  style, dead code, and at least one more quiet problem no test catches.
+- **`settings.cfg`** — the maintenance rules, read at runtime. The values must not change.
 - **`test_km_wachter.py` / `test_fleet_report.py`** — the test suite (currently red).
 - **`analyze.py`** — the "make it smarter" capstone: a data-driven breakdown-risk analysis.
 - **`fleet_history.csv`** — 120 labelled cars for the analysis step.
