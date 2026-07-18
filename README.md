@@ -8,9 +8,8 @@ written in an old style. Your job is to fix and modernize it.
 > teaching and are labelled as such in-app. They are not a real company. Industry figures
 > referenced in the accompanying brief come from public sources.
 
-ProoV × IBM Bob — this template is provided as part of a ProoV × IBM Bob collaboration.
-Do this task with IBM Bob (or another AI coding agent) — Bob is never required, and
-another agent works just as well.
+An official IBM Bobathon challenge, provided by ProoV and built with IBM Bob. Do this task
+with IBM Bob (or another AI coding agent) — another agent works just as well.
 
 ## How to run
 
