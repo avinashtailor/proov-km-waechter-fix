@@ -26,12 +26,12 @@ def wear_is_not_floored():
 
 
 def nearly_worn_car_is_flagged():
-    flagged = km.needs_service({"id": "KM-4471", "odometer": 14900, "last_service_km": 0})
+    flagged = km.needs_service({"id": "VOS-4471", "odometer": 14900, "last_service_km": 0})
     return flagged is True, "the nearly-worn car is %s" % ("flagged" if flagged else "NOT flagged")
 
 
 def missing_reading_is_handled():
-    flagged = km.needs_service({"id": "KM-7788", "odometer": 92000})
+    flagged = km.needs_service({"id": "VOS-7788", "odometer": 92000})
     return flagged is False, "a car with no last-service reading is %s" % ("wrongly flagged" if flagged else "handled")
 
 
@@ -57,8 +57,8 @@ def mileage_conversion_is_fixed():
 
 def report_survives_a_missing_reading():
     fleet = [
-        {"id": "KM-4471", "odometer": 14900, "last_service_km": 0},
-        {"id": "KM-7788", "odometer": 92000},
+        {"id": "VOS-4471", "odometer": 14900, "last_service_km": 0},
+        {"id": "VOS-7788", "odometer": 92000},
     ]
     s = fr.fleet_summary(fleet)
     return "average_wear" in s, "the nightly report ran without crashing: %s" % s
