@@ -1,15 +1,15 @@
-# Vossberg Mobility — KM-Wächter maintenance service
+# The Legacy Fix — a ProoV Guided Project, powered by IBM Bob
 
-KM-Wächter decides when each of Vossberg Mobility's 6,000 cars needs a service, and prints
-the nightly fleet-health report. It has hidden bugs, several tests fail, and the code is
-written in an old style. Your job is to fix and modernize it.
+This repo is the starting point of [The Legacy Fix](https://projectstudy.in/explore/experience-legacy-fix), a ProoV
+challenge. You are fixing **KM-Wächter**, the service that decides when each of Vossberg
+Mobility's 6,000 cars needs a service and prints the nightly fleet-health report. It has
+hidden bugs, several tests fail, and the code is written in an old style. Your job is to
+fix and modernize it — with IBM Bob (or another AI coding agent; another agent works just
+as well) doing the heavy lifting while you direct and audit it.
 
 > **Fictional company disclaimer.** Vossberg Mobility and KM-Wächter are invented for
 > teaching and are labelled as such in-app. They are not a real company. Industry figures
 > referenced in the accompanying brief come from public sources.
-
-An exciting IBM Bobathon challenge, provided by ProoV and built with IBM Bob. Do this task
-with IBM Bob (or another AI coding agent) — another agent works just as well.
 
 ## How to run
 
@@ -43,4 +43,4 @@ this template.
 
 ---
 
-This challenge is part of the ProoV project "The Legacy Fix" — https://projectstudy.in/explore/legacy-fix
+This challenge is part of the ProoV project "The Legacy Fix" — https://projectstudy.in/explore/experience-legacy-fix
